@@ -247,7 +247,7 @@ public class TheNoble {
 				+ "\n\"SHUT UP. YOU CANT HELP HER!\" -Savannah"
 				+ "\n\"LET HER GO RIGHT NOW!\" -"
 				+ player.userName
-				+ "\n\"Remember us. We are the Wanderers.\" - Man in Red Cloak"
+				+ "\n\"Remember us. We are the Wanderers.\" - Man in Purple Cloak"
 				+ "\nThey took the princess and leaped out of the window on to an air ballon. \n\"STOP LET HER GO\" -"
 				+ player.userName + "\n\"HELP ME PLEASE NOBLE\" - The Princess";
 		c1 = new Choice("\n\"Jump\" for the balloon", "jump", 0, s[0], -100, 0);

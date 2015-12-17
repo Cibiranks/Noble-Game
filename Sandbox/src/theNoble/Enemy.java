@@ -23,6 +23,20 @@ public class Enemy {
 			defence = 8;
 			health = 60;
 		}
-		if(type.eq)
+		if(type.equalsIgnoreCase("wanderSavannah")){
+			attack = 17;
+			defence = 10;
+			health = 70;
+		}
+		if(type.equalsIgnoreCase("wanderMarty")){
+			attack = 25;
+			defence = 15;
+			health = 50;
+		}
+		if(type.equalsIgnoreCase("wanderLeader")){
+			attack = 40;
+			defence = 25;
+			health = 85;
+		}
 	}
 }
