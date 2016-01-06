@@ -62,6 +62,14 @@ public class TheNoble {
 
 			System.out
 					.println("Your choices have led you to an unfortunate death. Try again and save the princess!!!!");
+			
+			// Check for high score
+			if (HighScores.submitHighScore(player)) {
+				System.out.println("High score achieved.");
+			} else {
+				System.out.println("You did not get a high score.");
+			}
+			
 			do {
 				System.out.println("Play Again? (y/n)");
 				playAgain = Keyboard.keyb.nextLine();
@@ -162,7 +170,7 @@ public class TheNoble {
 	 * Create the scenario and choices.
 	 */
 	public static void initializeScenarios() {
-		int count = 10; // amount of scenarios we can have
+		int count = 15; // amount of scenarios we can have
 		Choice c1, c2, c3, c4, c5, c6; // the possible choices we have
 		Scenario[] s = new Scenario[count]; // An array that creates scenarios
 											// based on our count variable
@@ -175,7 +183,7 @@ public class TheNoble {
 																											// scenario
 																											// that
 																											// will
-																											// give
+																										    // give
 																											// the
 																											// player
 																											// choices
@@ -260,12 +268,24 @@ public class TheNoble {
 		s[6].description = "\nYou back up and charge in to the door.\nYou wake up an hour later with an head injury in the infirmary.";
 		c1 = new Choice("\n\"Ask\" the doctor about what happened", "ask", 2,
 				s[8], 0, 0);
-		c2 = new Choice("\"Walk\" out of the infirmary", "walk", 1, s[8], 0, 0);
+		c2 = new Choice("\"Walk\" out of the infirmary", "walk", 1, s[9], 0, 0);
 		s[6].choices.add(c1);
 		s[6].choices.add(c2);
 		world.add(s[6]);
 
-		//s[7].description = "\n\"
+		s[7].description = "\nYou look in shock at the balloon flying away. It flies to a forest not to far away from the castle called which not many were allowed to enter" +
+		" \ndue to the danger of the creatures that lurk. As you walk towards the large window you step on a card. You pick up the card and notice that it is the Leader's" +
+		" \nnote to Marty. It explains their plan to take the Princess back to the forest to return the royal blood to the Wanderer clan. At the end of letter"	+
+		" \nit has the initials \"Z.N\".";
+		c1 = new Choice("\n\"Inform\" the king about the situation", "inform", 2, s[10], 0, 0);
+		c2 = new Choice("\"Rip\" the card up in frustration", "rip", 0, s[0], -100, 0);
+		c3 = new Choice("\"Head\" off to the forest", "head", 1, s[11], 0, 0);
+		s[7].choices.add(c1);
+		s[7].choices.add(c2);
+		s[7].choices.add(c3);
+		world.add(s[7]);
+		
+		//s[8].description = "\nYou walk up to"
 	}
 
 	/**
