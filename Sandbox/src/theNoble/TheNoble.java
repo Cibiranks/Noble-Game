@@ -62,14 +62,14 @@ public class TheNoble {
 
 			System.out
 					.println("Your choices have led you to an unfortunate death. Try again and save the princess!!!!");
-			
+
 			// Check for high score
 			if (HighScores.submitHighScore(player)) {
 				System.out.println("High score achieved.");
 			} else {
 				System.out.println("You did not get a high score.");
 			}
-			
+
 			do {
 				System.out.println("Play Again? (y/n)");
 				playAgain = Keyboard.keyb.nextLine();
@@ -183,7 +183,7 @@ public class TheNoble {
 																											// scenario
 																											// that
 																											// will
-																										    // give
+																											// give
 																											// the
 																											// player
 																											// choices
@@ -217,10 +217,8 @@ public class TheNoble {
 		// The Third Scenario
 		s[2].description = "\n*Roof Breaking sound* \nAHHHHHHHHHHHHHHHHHHHHHHHHHHHH \nWhat was that? Who screamed?"
 				+ "          \n- Crowd Mumbling";
-		c1 = new Choice("\n\"Investigate\"", "investigate", 2, s[3], 0, 0);
-		c2 = new Choice("\"Ask \"", "ask", 1, s[4], 0, 0);
-		s[2].choices.add(c1);
-		s[2].choices.add(c2);
+		s[2].choices.add( new Choice("\n\"Investigate\"", "investigate", 2, s[3], 0, 0));
+		s[2].choices.add(new Choice("\"Ask \"", "ask", 1, s[4], 0, 0));
 		world.add(s[2]);
 
 		// The Fourth Scenario
@@ -273,39 +271,46 @@ public class TheNoble {
 		s[6].choices.add(c2);
 		world.add(s[6]);
 
-		s[7].description = "\nYou look in shock at the balloon flying away. It flies to a forest not to far away from the castle called which not many were allowed to enter" +
-		" \ndue to the danger of the creatures that lurk. As you walk towards the large window you step on a card. You pick up the card and notice that it is the Leader's" +
-		" \nnote to Marty. It explains their plan to take the Princess back to the forest to return the royal blood to the Wanderer clan. At the end of letter"	+
-		" \nit has the initials \"Z.N\".";
-		c1 = new Choice("\n\"Inform\" the king about the situation", "inform", 2, s[10], 0, 0);
-		c2 = new Choice("\"Touch\" the initials on the card", "touch", 0, s[0], -100, 0);
+		s[7].description = "\nYou look in shock at the balloon flying away. It flies to a forest not to far away from the castle which not many were allowed to enter"
+				+ " \ndue to the danger of the creatures that lurk. As you walk towards the large window you step on a card. You pick up the card and notice that it is the Leader's"
+				+ " \nnote to Marty. It explains their plan to take the Princess back to the forest to return the royal blood to the Wanderer clan. At the end of the letter"
+				+ " \nit has the initials \"Z.N\".";
+		c1 = new Choice("\n\"Inform\" the king about the situation", "inform",
+				2, s[10], 0, 0);
+		c2 = new Choice("\"Touch\" the initials on the card", "touch", 0, s[0],
+				-100, 0);
 		c3 = new Choice("\"Head\" off to the forest", "head", 1, s[11], 0, 0);
 		s[7].choices.add(c1);
 		s[7].choices.add(c2);
 		s[7].choices.add(c3);
 		world.add(s[7]);
-		
-		s[8].description = "\nYou walk up to the Doctor and ask him what happened. He tells you that the princess was kidnapped by a group called" +
-		"/n the Wanderers and that they took her to the forest not to far away from the castle.";
-		c1 = new Choice("\n\"Go\" back to the room where the noises were coming from", "go", 1, s[12], 0, 0);
+
+		s[8].description = "\nYou walk up to the Doctor and ask him what happened. He tells you that the princess was kidnapped by a group called"
+				+ "\nthe Wanderers and that they took her to the forest not to far away from the castle.";
+		c1 = new Choice(
+				"\n\"Go\" back to the room where the noises were coming from",
+				"go", 1, s[12], 0, 0);
 		c2 = new Choice("\"Run\" to the forest", "run", 0, s[9], 0, 0);
 		s[8].choices.add(c1);
 		s[8].choices.add(c2);
 		world.add(s[8]);
-		
+
 		s[9].description = "\nYou exit out of the infirmary only to feel a massive pain in your head.";
-		c1 = new Choice("\n\"Take\" a break for a moment", "take", 0, s[0], -80, 0);
+		c1 = new Choice("\n\"Take\" a break for a moment", "take", 0, s[0],
+				-80, 0);
 		s[9].choices.add(c1);
 		world.add(s[9]);
-		
-		s[10].description = "\nYou return to the feast where all the guests are bewildered. The King is chatting with some guests and as you approach" +
-		"\n you start to feel nervous about talking to the king. \n\"King, may I have a word please\" -" + player.userName + "\n\"Alright, but make it quick\" -" +
-		"The King. \nYou explain to him about what happened and show him the card. \n\"Oh no my baby girl!!! I had concerns about this for a while now" +
-		" but I never thought it was actually going to happen. \nYou see, the Wanderers are outcasts from the kingdom that inhabit the Tenebris Forest." +
-		" \nThey have always wanted to assume power in the kingdom, but they could never do so due to the strength of our army. Now that they have the "+
-		"\nPrincess, they'll be able to use her as a bride for Zanothith Newbotm, the leader of the Wanderers. If that happens, the last of the royal blood"+
-		"\nwill be in the hands of the Wanderers and they will take power. I need you to save her as the army has been sent elsewhere." +
-		"\nWill you do it? I will give $100 for your journey.";
+
+		s[10].description = "\nYou return to the feast where all the guests are bewildered. The King is chatting with some guests and as you approach"
+				+ "\n you start to feel nervous about talking to the king. \n\"King, may I have a word please\" -"
+				+ player.userName
+				+ "\n\"Alright, but make it quick\" -"
+				+ "The King. \nYou explain to him about what happened and show him the card. \n\"Oh no my baby girl!!! I had concerns about this for a while now"
+				+ " but I never thought it was actually going to happen. \nYou see, the Wanderers are outcasts from the kingdom that inhabit the Tenebris Forest."
+				+ " \nThey have always wanted to assume power in the kingdom, but they could never do so due to the strength of our army. Now that they have the "
+				+ "\nPrincess, they'll be able to use her as a bride for Zanothith Newbotm, the leader of the Wanderers. If that happens, the last of the royal blood"
+				+ "\nwill be in the hands of the Wanderers and they will take power. I need you to save her as the army has been sent elsewhere."
+				+ "\nWill you do it? I will give $100 for your journey.";
 		c1 = new Choice("\n\"Yes\"", "yes", 5, s[13], 0, 100);
 		c2 = new Choice("\"No\"", "no", 1, s[14], 0, 0);
 		s[10].choices.add(c1);
