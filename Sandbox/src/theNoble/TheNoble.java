@@ -278,14 +278,39 @@ public class TheNoble {
 		" \nnote to Marty. It explains their plan to take the Princess back to the forest to return the royal blood to the Wanderer clan. At the end of letter"	+
 		" \nit has the initials \"Z.N\".";
 		c1 = new Choice("\n\"Inform\" the king about the situation", "inform", 2, s[10], 0, 0);
-		c2 = new Choice("\"Rip\" the card up in frustration", "rip", 0, s[0], -100, 0);
+		c2 = new Choice("\"Touch\" the initials on the card", "touch", 0, s[0], -100, 0);
 		c3 = new Choice("\"Head\" off to the forest", "head", 1, s[11], 0, 0);
 		s[7].choices.add(c1);
 		s[7].choices.add(c2);
 		s[7].choices.add(c3);
 		world.add(s[7]);
 		
-		//s[8].description = "\nYou walk up to"
+		s[8].description = "\nYou walk up to the Doctor and ask him what happened. He tells you that the princess was kidnapped by a group called" +
+		"/n the Wanderers and that they took her to the forest not to far away from the castle.";
+		c1 = new Choice("\n\"Go\" back to the room where the noises were coming from", "go", 1, s[12], 0, 0);
+		c2 = new Choice("\"Run\" to the forest", "run", 0, s[9], 0, 0);
+		s[8].choices.add(c1);
+		s[8].choices.add(c2);
+		world.add(s[8]);
+		
+		s[9].description = "\nYou exit out of the infirmary only to feel a massive pain in your head.";
+		c1 = new Choice("\n\"Take\" a break for a moment", "take", 0, s[0], -80, 0);
+		s[9].choices.add(c1);
+		world.add(s[9]);
+		
+		s[10].description = "\nYou return to the feast where all the guests are bewildered. The King is chatting with some guests and as you approach" +
+		"\n you start to feel nervous about talking to the king. \n\"King, may I have a word please\" -" + player.userName + "\n\"Alright, but make it quick\" -" +
+		"The King. \nYou explain to him about what happened and show him the card. \n\"Oh no my baby girl!!! I had concerns about this for a while now" +
+		" but I never thought it was actually going to happen. \nYou see, the Wanderers are outcasts from the kingdom that inhabit the Tenebris Forest." +
+		" \nThey have always wanted to assume power in the kingdom, but they could never do so due to the strength of our army. Now that they have the "+
+		"\nPrincess, they'll be able to use her as a bride for Zanothith Newbotm, the leader of the Wanderers. If that happens, the last of the royal blood"+
+		"\nwill be in the hands of the Wanderers and they will take power. I need you to save her as the army has been sent elsewhere." +
+		"\nWill you do it? I will give $100 for your journey.";
+		c1 = new Choice("\n\"Yes\"", "yes", 5, s[13], 0, 100);
+		c2 = new Choice("\"No\"", "no", 1, s[14], 0, 0);
+		s[10].choices.add(c1);
+		s[10].choices.add(c2);
+		world.add(s[10]);
 	}
 
 	/**
