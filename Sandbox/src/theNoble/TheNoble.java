@@ -7,12 +7,15 @@ public class TheNoble {
 
 	public static ArrayList<Scenario> world = new ArrayList<Scenario>();
 	public static Player player = new Player();
+	public static HighScores highScores = new HighScores();
 
 	/**
 	 * TODO finish story line Figure out how to integrate intelligence How to
 	 * display text if their choice isnt available Add a battle scene
 	 **/
 	public static void main(String[] args) {
+		// load the high scores
+		highScores.loadHighScores();
 
 		String playAgain = "";
 		do {// This do loop is for the reset
@@ -217,7 +220,8 @@ public class TheNoble {
 		// The Third Scenario
 		s[2].description = "\n*Roof Breaking sound* \nAHHHHHHHHHHHHHHHHHHHHHHHHHHHH \nWhat was that? Who screamed?"
 				+ "          \n- Crowd Mumbling";
-		s[2].choices.add( new Choice("\n\"Investigate\"", "investigate", 2, s[3], 0, 0));
+		s[2].choices.add(new Choice("\n\"Investigate\"", "investigate", 2,
+				s[3], 0, 0));
 		s[2].choices.add(new Choice("\"Ask \"", "ask", 1, s[4], 0, 0));
 		world.add(s[2]);
 
