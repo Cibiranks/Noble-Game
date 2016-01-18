@@ -67,7 +67,7 @@ public class TheNoble {
 					.println("Your choices have led you to an unfortunate death. Try again and save the princess!!!!");
 
 			// Check for high score
-			if (HighScores.submitHighScore(player)) {
+			if (HighScores.submitHighScore(player) == true) {
 				System.out.println("High score achieved.");
 			} else {
 				System.out.println("You did not get a high score.");

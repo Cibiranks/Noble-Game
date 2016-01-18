@@ -48,14 +48,28 @@ public class HighScores {
 			}
 		}
 		// Insert the submitted score if high enough
-		if(TheNoble.player.points > 0){
+		if (TheNoble.player.points > highScores[0].score) {
 			highScores[0].name = TheNoble.player.userName;
 			highScores[0].score = TheNoble.player.points;
+			System.out.println(highScores[0]);
+			return true;
+		} else if (TheNoble.player.points < highScores[0].score && TheNoble.player.points > highScores[1].score) {
+			highScores[1].name = TheNoble.player.userName;
+			highScores[1].score = TheNoble.player.points;
+			System.out.println(highScores[1]);
+			return true;
+		} else if (TheNoble.player.points < highScores[1].score && TheNoble.player.points > highScores[2].score) {
+			highScores[2].name = TheNoble.player.userName;
+			highScores[2].score = TheNoble.player.points;
+			System.out.println(highScores[2]);
+			return true;
+		} else {
+			return false;
 		}
 		// loop through the scores and see if the player has a high score
 		// if high score, update the list and return true
 		// if not, return false
-		return false;
+
 	}
 
 	// public int getHighScore() {
@@ -69,8 +83,9 @@ public class HighScores {
 	/**
 	 * Read the high score data into the array
 	 */
-	public void loadHighScores() {
 
+	public void loadHighScores() {
+		
 	}
 
 }
