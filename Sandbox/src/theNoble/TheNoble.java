@@ -15,7 +15,7 @@ public class TheNoble {
 	 **/
 	public static void main(String[] args) {
 		// load the high scores
-		highScores.loadHighScores();
+		//highScores.loadHighScores();
 
 		String playAgain = "";
 		do {// This do loop is for the reset
@@ -67,7 +67,7 @@ public class TheNoble {
 					.println("Your choices have led you to an unfortunate death. Try again and save the princess!!!!");
 
 			// Check for high score
-			if (HighScores.submitHighScore(player) == true) {
+			if (highScores.submitHighScore(player) == true) {
 				System.out.println("High score achieved.");
 			} else {
 				System.out.println("You did not get a high score.");
